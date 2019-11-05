@@ -1,14 +1,17 @@
 package com.challenge.entity;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.validation.constraints.NotNull;
 
-import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import lombok.Data;
 
 @Entity
 @Data
@@ -21,8 +24,6 @@ public class Submission {
 	@CreatedDate
 	@Column(name = "created_at")
 	private LocalDate createdAt;
-
-	private User userId;
 
 	@EmbeddedId
 	private UserChallenge userChallenge;
