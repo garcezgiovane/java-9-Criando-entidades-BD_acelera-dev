@@ -8,6 +8,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 
 import lombok.Data;
@@ -15,6 +17,8 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity(name = "user")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 public class User {
 	
@@ -24,7 +28,6 @@ public class User {
 	
 	@NotNull
 	@Size(min = 1, max = 100)
-	@Column(name = "full_name")
 	private String fullname;
 	
 	@NotNull
@@ -44,9 +47,9 @@ public class User {
 	@Column(name = "created_at")
 	private LocalDate createdAt;
 	
-	@OneToMany(mappedBy = "userId")
+	@OneToMany(mappedBy = "id.user")
 	private List<Submission> submissions;
 	
-	@OneToMany(mappedBy = "userId")
+	@OneToMany(mappedBy = "id.user")
 	private List<Candidate> candidates;
 }

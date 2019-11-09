@@ -33,7 +33,7 @@ public class Company {
 	@Column(name = "created_at")
 	private LocalDate createdAt;
 
-	@OneToMany(mappedBy = "companyId")
+	@OneToMany(mappedBy = "id.company")
 	private List<Candidate> candidates;
 }
 

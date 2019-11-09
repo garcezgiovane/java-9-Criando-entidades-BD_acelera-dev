@@ -33,10 +33,10 @@ public class Acceleration {
 	@Column(name = "created_at")
 	private LocalDate createdAt;
 
-	@OneToMany(mappedBy = "userId")
+	@OneToMany(mappedBy = "id.acceleration")
 	private List<Candidate> candidates;
 
 	@ManyToOne
-	private Challenge challengeId;
+	private Challenge challenge;
 	
 }

@@ -22,9 +22,7 @@ public class Submission {
 	@Column(name = "created_at")
 	private LocalDate createdAt;
 
-	private User userId;
-
 	@EmbeddedId
-	private UserChallenge userChallenge;
+	private UserChallenge id;
 	
 }

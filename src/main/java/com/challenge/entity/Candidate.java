@@ -24,7 +24,7 @@ public class Candidate implements Serializable {
 	private LocalDate createdAt;
 
 	@EmbeddedId
-	private UserAccelerationCompany userAccelerationCompany;
+	private UserAccelerationCompany id;
 
 
 }

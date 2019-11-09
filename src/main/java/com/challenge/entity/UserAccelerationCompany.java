@@ -1,6 +1,7 @@
 package com.challenge.entity;
 
 import javax.persistence.Embeddable;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
@@ -8,11 +9,14 @@ import java.io.Serializable;
 public class UserAccelerationCompany implements Serializable {
 
     @ManyToOne
-    private User userId;
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @ManyToOne
-    private Acceleration accelerationId;
+    @JoinColumn(name = "acceleration_id")
+    private Acceleration acceleration;
 
     @ManyToOne
-    private Company companyId;
+    @JoinColumn(name = "company_id")
+    private Company company;
 }
