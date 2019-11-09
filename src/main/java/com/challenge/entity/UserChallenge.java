@@ -3,10 +3,9 @@ package com.challenge.entity;
 import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import java.io.Serializable;
 
 @Embeddable
-public class UserChallenge implements Serializable {
+public class UserChallenge {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
